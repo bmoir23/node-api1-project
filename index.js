@@ -84,7 +84,7 @@ server.get('/api/users/:id', (req, res) => {
             if (!name || !bio){
                 res.status(400).json({success: false, errorMessage: 'Please provide name and bio for the user.'});
             } else {
-                db.update(req.params.is, req.body)
+                db.update(id, req.body)
                 .then(user => {
                     if (user){
                         res.status(200).json(user);
